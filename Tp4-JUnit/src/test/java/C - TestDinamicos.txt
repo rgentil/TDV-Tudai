@@ -1,0 +1,100 @@
+package tudai.tdyv.junit.test;
+
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collection;
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.List;
+import java.util.Map;
+import java.util.function.Function;
+import java.util.stream.IntStream;
+import java.util.stream.Stream;
+
+import org.junit.jupiter.api.DynamicTest;
+import org.junit.jupiter.api.TestFactory;
+import org.junit.jupiter.api.function.ThrowingConsumer;
+
+import tudai.tdyv.junit.src.Padron;
+import tudai.tdyv.junit.src.Usuario;
+
+
+public class DynamicTestUsr {
+
+@TestFactory
+	    Iterator<DynamicTest> dynamicTestsConIterador() {
+
+			   List<Usuario>  testList = new  ArrayList<Usuario>();
+		        Usuario u1= new Usuario("Juan","1979-01-01",42,true);
+		    	Usuario u2 = new Usuario("Pedro","1980-02-01",41,true);
+		    	Usuario u3 = new Usuario("Maria","1981-03-01",40,true);
+		    	testList.add(u1);
+		    	testList.add(u2);
+		    	testList.add(u3);
+			 
+		 
+		    return Arrays.asList(DynamicTest.dynamicTest("Kevin no esta", () -> {
+	        	Iterator<Usuario> i =testList.iterator();
+	        	while(i.hasNext()) 
+	        	assertTrue( i.next().getNombre()!="Kevin" );
+	        	
+	        	}
+	        	) , DynamicTest.dynamicTest("Multiply Test", () -> assertEquals(4, Math.multiplyExact(2, 2))))
+	            .iterator();
+	    }
+	}
+
+
+//-------------------------------------------------------------------------------------------------------
+ Collection<DynamicTest> dynamicTestsCollecion() {
+		   List<Usuario>  testList = new  ArrayList<Usuario>();
+	        Usuario u1= new Usuario("Juan","1979-01-01",42,true);
+	    	Usuario u2 = new Usuario("Pedro","1980-02-01",41,true);
+	    	Usuario u3 = new Usuario("Maria","1981-03-01",40,true);
+	    	testList.add(u1);
+	    	testList.add(u2);
+	    	testList.add(u3);
+		 
+		 
+	        return Arrays.asList(DynamicTest.dynamicTest("Nombre no es nulo", () -> assertTrue(u1.getNombre()!=null)),    DynamicTest.dynamicTest("Fecha Nacimiento no es nula", () -> assertTrue(u1.getFechaNacimiento()!=null)));
+	    }
+	/------------------------------------------------------------------------------------
+
+
+
+    @TestFactory
+    Stream<DynamicTest> dynamicTestsFromUsuarios() {
+
+        Padron padron = new Padron();
+
+        List<Usuario>  testList = new  ArrayList<Usuario>();
+        Usuario u1= new Usuario("Juan","1979-01-01",42,true);
+    	Usuario u2 = new Usuario("Pedro","1980-02-01",41,true);
+    	Usuario u3 = new Usuario("Maria","1981-03-01",40,true);
+    	testList.add(u1);
+    	testList.add(u2);
+    	testList.add(u3);
+
+        List<Integer> edades =  Arrays.asList(42,41,40);
+
+    	
+    	
+        return testList.stream()
+            .map(dom -> DynamicTest.dynamicTest("Testing: " + dom, () -> {
+                int id = testList.indexOf(dom);
+                assertEquals(edades.get(id),padron.getUsuario(dom.getNombre()).getEdad());
+            }));
+
+    }    
+     
+     
+           
+
+}
+
+
+
