@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="4" passed="3" failed="1" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2022-11-11T20:50:15 ART" name="Default suite" finished-at="2022-11-11T20:50:34 ART" duration-ms="19099">
+    <groups>
+    </groups>
+    <test started-at="2022-11-11T20:50:15 ART" name="Default test" finished-at="2022-11-11T20:50:34 ART" duration-ms="19099">
+      <class name="test.java.mercadolibre.MercadoLibre">
+        <test-method is-config="true" signature="launchBrowser()[pri:0, instance:test.java.mercadolibre.MercadoLibre@4efac082]" started-at="2022-11-11T20:50:15 ART" name="launchBrowser" finished-at="2022-11-11T20:50:17 ART" duration-ms="1959" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- launchBrowser -->
+        <test-method signature="loadPage()[pri:1, instance:test.java.mercadolibre.MercadoLibre@4efac082]" started-at="2022-11-11T20:50:17 ART" name="loadPage" finished-at="2022-11-11T20:50:22 ART" duration-ms="5184" status="FAIL">
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[expected [💣 Cyber Monday 2022 | Mercado Libre Argentina] but found [Mercado Libre Argentina - Envíos Gratis en el día]]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: expected [💣 Cyber Monday 2022 | Mercado Libre Argentina] but found [Mercado Libre Argentina - Envíos Gratis en el día]
+at org.testng.Assert.fail(Assert.java:110)
+at org.testng.Assert.failNotEquals(Assert.java:1413)
+at org.testng.Assert.assertEqualsImpl(Assert.java:149)
+at org.testng.Assert.assertEquals(Assert.java:131)
+at org.testng.Assert.assertEquals(Assert.java:655)
+at org.testng.Assert.assertEquals(Assert.java:665)
+at test.java.mercadolibre.MercadoLibre.loadPage(MercadoLibre.java:25)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:78)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:567)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
+at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:677)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:221)
+at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
+at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:962)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:194)
+at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
+at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+at org.testng.TestRunner.privateRun(TestRunner.java:806)
+at org.testng.TestRunner.run(TestRunner.java:601)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:433)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:427)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:387)
+at org.testng.SuiteRunner.run(SuiteRunner.java:330)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1256)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1176)
+at org.testng.TestNG.runSuites(TestNG.java:1099)
+at org.testng.TestNG.run(TestNG.java:1067)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- loadPage -->
+        <test-method signature="login()[pri:2, instance:test.java.mercadolibre.MercadoLibre@4efac082]" started-at="2022-11-11T20:50:22 ART" name="login" finished-at="2022-11-11T20:50:22 ART" duration-ms="2" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- login -->
+        <test-method signature="searchProduct()[pri:3, instance:test.java.mercadolibre.MercadoLibre@4efac082]" started-at="2022-11-11T20:50:22 ART" name="searchProduct" finished-at="2022-11-11T20:50:34 ART" duration-ms="11748" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- searchProduct -->
+        <test-method signature="finishTest()[pri:4, instance:test.java.mercadolibre.MercadoLibre@4efac082]" started-at="2022-11-11T20:50:34 ART" name="finishTest" finished-at="2022-11-11T20:50:34 ART" duration-ms="151" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- finishTest -->
+      </class> <!-- test.java.mercadolibre.MercadoLibre -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>
